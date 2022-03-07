@@ -6,14 +6,14 @@ spring:
         enabled: true
   # rabbitmq 设置
   rabbitmq:
-    host: 192.168.1.254
+    host: localhost
     port: 5672
     username: guest
     password: guest
   # redis 设置
   redis:
-    host: 192.168.1.254
-    port: 9031
+    host: localhost
+    port: 6379
   # 出现错误时, 直接抛出异常(便于异常统一处理，否则捕获不到404)
   mvc:
     throw-exception-if-no-handler-found: true
@@ -97,9 +97,9 @@ zuul:
     # 是否开启接口 token 认证
     enabled: true
     # 公钥获取地址
-    tokenKeyUri: http://192.168.1.254:9050/oauth/token_key
+    tokenKeyUri: http://localhost:9050/oauth/token_key
     # 验证 token 地址
-    checkTokenUri: http://192.168.1.254:9050/oauth/check_token
+    checkTokenUri: http://localhost:9050/oauth/check_token
     # 不验证 token uri，只需配置前置部分即可，例如配置 “/a”，以下全部生效：“/a/b”，“/a/b/c/...”，“/a/b?c=d&...”
     whiteList:
     - "/actuator" # 系统API，监控相关，勿动
